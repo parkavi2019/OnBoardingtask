@@ -20,8 +20,8 @@ namespace ProjectMars.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("LangFeature")]
-    public partial class LangFeatureFeature
+    [NUnit.Framework.DescriptionAttribute("1.LangFeature")]
+    public partial class _1_LangFeatureFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -35,7 +35,7 @@ namespace ProjectMars.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LangFeature", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "1.LangFeature", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,9 +76,9 @@ namespace ProjectMars.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A.Add a Language To User Profile")]
         [NUnit.Framework.TestCaseAttribute("Tamil", "Basic", null)]
+        [NUnit.Framework.TestCaseAttribute("Malayalm", "Basic", null)]
         [NUnit.Framework.TestCaseAttribute("Telgu", "Basic", null)]
-        [NUnit.Framework.TestCaseAttribute("en123h", "Basic", null)]
-        [NUnit.Framework.TestCaseAttribute("en123h", "Basic", null)]
+        [NUnit.Framework.TestCaseAttribute("Chinese", "Basic", null)]
         public virtual void A_AddALanguageToUserProfile(string language, string level, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;

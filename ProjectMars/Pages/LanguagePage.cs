@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
+﻿
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -19,39 +19,33 @@ namespace ProjectMars.Pages
         private static IWebElement ChooseLanguageLevel => driver.FindElement(By.Name("level"));
 
 
-        private static IWebElement Newlanguage => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]"));
-        //  private static IWebElement Newlanguage => driver.FindElement(By.Name("name"));
-        // private static IWebElement Newlevel => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[2]"));
+        
+         private static IWebElement Newlanguage => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]"));
+        
         private static IWebElement Newlevel => driver.FindElement(By.XPath("//td[contains(text(),'Basic')]"));
 
-        //  private static IWebElement Newlevel => driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[2]/tr/td[2]"));
-
-        //  private static IWebElement Newlevel => driver.FindElement(By.XPath("//option[contains(text(),'Native/Bilingual')]"));
 
         private static IWebElement AddButton => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[3]/input[1]"));
-        //  private static IWebElement EditButton => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[3]/span[1]/i"));
-        //  private static IWebElement EditButton => driver.FindElement(By.XPath("//td[@class='right aligned']//i[@class='outline write icon']"));
-
+        
         private static IWebElement EditButton => driver.FindElement(By.XPath("//body[1]/div[1]/div[1]/section[2]/div[1]/div[1]/div[1]/div[3]/form[1]/div[2]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/span[1]/i[1]"));
-        //private static IWebElement UpdateLangauge => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]"));
+        
         private static IWebElement UpdateLanguage => driver.FindElement(By.Name("name"));
-        // private static IWebElement UpdateLevel => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[2]"));
+        
         private static IWebElement UpdateLevel => driver.FindElement(By.Name("level"));
         private static IWebElement Createdlanguage => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]"));
         private static IWebElement Createdlevel => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[2]"));
         private static IWebElement UpdateButton => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td/div/span/input[1]"));
 
-        // private static IWebElement Deletedelement => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]"));
-        // private static IWebElement Deletedlevel => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[2]"));
-
-        // private static IWebElement DeleteButton => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i"));
-        private static IWebElement DeleteButton => driver.FindElement(By.XPath("//tbody/tr[1]/td[3]/span[2]/i[1]"));
+        
+       
+        private static IWebElement DeleteButton => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i"));
         public void clearExistingdata()
         {
             try
             {
-                IWebElement deleteButton = driver.FindElement(By.XPath("//div[2]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i"));
-                var deleteButtons = driver.FindElements(By.XPath("//div[2]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i"));
+               
+                var deleteButtons = driver.FindElements(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[1]/tr/td[3]/span[2]/i"));
+                
                 foreach (var button in deleteButtons)
                 {
                     button.Click();
@@ -68,18 +62,20 @@ namespace ProjectMars.Pages
         public void AddLanguage(string Language, string Level)
         {
             //Click on AddNew button
+            Thread.Sleep(1000);
             AddNew.Click();
 
             //Enter the language that needs to be added
             AddLanguageTextBox.SendKeys(Language);
+
             //Choose the language level
             Thread.Sleep(3000);
             ChooseLanguageLevel.Click();
+             ChooseLanguageLevel.SendKeys(Level);
 
-            ChooseLanguageLevel.SendKeys(Level);
             //Click on Add button
             AddButton.Click();
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
             IWebElement messageBox = driver.FindElement(By.XPath("//div[@class='ns-box-inner']"));
             Thread.Sleep(3000);
 
@@ -102,15 +98,15 @@ namespace ProjectMars.Pages
             {
                 Console.WriteLine("Check Error");
             }
-            //  Assert.AreEqual(messageBox, popupMessage, "Actual message and Expected message do not match");
+            
 
         }
-        public string AddLanguage()
+        public string getAddLanguage()
         {
             return Newlanguage.Text;
         }
 
-        public string AddLevel()
+        public string getAddLevel()
         {
             return Newlevel.Text;
 
@@ -174,10 +170,6 @@ namespace ProjectMars.Pages
         //Deleting a language from the language list
         public void DeleteLanguage()
         {
-            //var DeleteButton = driver.FindElement(By.XPath($"//tbody[tr[td[text()='{Language}'] and td[text()='{Level}']]]//i[@class='remove icon']"));
-            //*[@id="account-profile-section"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i
-            // Find and click the delete icon in the row
-            // LanguageDeleteIcon.Click();
             Thread.Sleep(2000);
             DeleteButton.Click();
 

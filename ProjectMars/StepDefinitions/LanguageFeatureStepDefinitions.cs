@@ -26,6 +26,7 @@ namespace ProjectMars.StepDefinitions
             SignInPageObj.SignInSteps();
         }
 
+
         [When(@"Create a NewLanguage Into User Profile '([^']*)' and '([^']*)'")]
         public void WhenCreateANewLanguageIntoUserProfileAnd(string Language, string Level)
         {
@@ -36,9 +37,9 @@ namespace ProjectMars.StepDefinitions
         public void ThenTheNewLanguageRecordCreatedAndSuccessfullyCreated(string Language, string Level)
         {
 
-            string Newlanguage = LanguagePageObj.AddLanguage();
-            string Newlevel = LanguagePageObj.AddLevel();
-
+            string Newlanguage = LanguagePageObj.getAddLanguage();
+            string Newlevel = LanguagePageObj.getAddLevel();
+            Thread.Sleep(1000);
             Assert.AreEqual(Language, Newlanguage, "Actual Language and expected Language Level do not match");
             Assert.AreEqual(Level, Newlevel, "Actual Level and expected Language Level do not match");
         }
@@ -58,6 +59,7 @@ namespace ProjectMars.StepDefinitions
         {
             string createdLanguage = LanguagePageObj.getEditedLanguage();
             string createdLevel = LanguagePageObj.getEditedLevel();
+            Thread.Sleep(1000);
             Assert.AreEqual(Language, createdLanguage, "Edited language and expected language do not match.");
             Assert.AreEqual(Level, createdLevel, "Edited level and created level do not match");
         }

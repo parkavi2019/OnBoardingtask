@@ -10,9 +10,9 @@ namespace ProjectMars.Pages
 {
     public class SkillPage : CommonDriver
     {
-        // private static IWebElement SkillTab => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
+        
         private static IWebElement SkillTab => driver.FindElement(By.XPath("//a[contains(text(),'Skills')]"));
-        // private static IWebElement AddNew => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/thead/tr/th[3]/div"));
+       
         private static IWebElement AddNew => driver.FindElement(By.XPath("//div[@class='ui teal button']"));
         private static IWebElement AddSkillTextBox => driver.FindElement(By.Name("name"));
         private static IWebElement ChooseSkillLevel => driver.FindElement(By.Name("level"));
@@ -21,24 +21,22 @@ namespace ProjectMars.Pages
 
         private static IWebElement AddButton => driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/div/span/input[1]"));
 
-        // private static IWebElement AddButton => driver.FindElement(By.XPath("/input[@value='Add']"));
+        
         private static IWebElement EditButton => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[3]/span[1]/i"));
-        //  private static IWebElement EditButton => driver.FindElement(By.XPath("//html[1]/body[1]/div[1]/div[1]/section[2]/div[1]/div[1]/div[1]/div[3]/form[1]/div[3]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/span[1]/i[1]"));
-        // private static IWebElement EditButton => driver.FindElement(By.XPath("//td[@class='right aligned']//i[@class='outline write icon']"));
+        
         private static IWebElement UpdateSkill => driver.FindElement(By.Name("name"));
         private static IWebElement UpdateLevel => driver.FindElement(By.Name("level"));
         private static IWebElement CreatedSkill => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[1]"));
         private static IWebElement Createdlevel => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[2]"));
         private static IWebElement UpdateButton => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/span/input[1]"));
         private static IWebElement DeleteButton => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i"));
-        //private static IWebElement DeleteButton => driver.FindElement(By.XPath("//tbody/tr[1]/td[3]/span[2]/i[1]"));
+        
 
         public void clearExistingdata()
         {
             try
             {
-                // IWebElement DeleteButton = driver.FindElement(By.XPath("//div[2]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i"));
-                //var DeleteButtons = driver.FindElements(By.XPath("//div[2]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i"));
+                
 
                 IWebElement DeleteButton = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i"));
                 var DeleteButtons = driver.FindElements(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i"));
@@ -100,7 +98,7 @@ namespace ProjectMars.Pages
             {
                 Console.WriteLine("Check Error");
             }
-            //  Assert.AreEqual(messageBox, popupMessage, "Actual message and Expected message do not match");
+            
 
         }
         public string AddSkill()

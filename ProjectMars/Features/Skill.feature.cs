@@ -20,8 +20,8 @@ namespace ProjectMars.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Skill Feature")]
-    public partial class SkillFeatureFeature
+    [NUnit.Framework.DescriptionAttribute("2.Skill Feature")]
+    public partial class _2_SkillFeatureFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -35,7 +35,7 @@ namespace ProjectMars.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Skill Feature", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "2.Skill Feature", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,7 +77,8 @@ namespace ProjectMars.Features
         [NUnit.Framework.DescriptionAttribute("A.Add a Skill to User Profile")]
         [NUnit.Framework.TestCaseAttribute("C#", "Beginner", null)]
         [NUnit.Framework.TestCaseAttribute("java", "Beginner", null)]
-        [NUnit.Framework.TestCaseAttribute("Selen=um", "Beginner", null)]
+        [NUnit.Framework.TestCaseAttribute("SQL", "Beginner", null)]
+        [NUnit.Framework.TestCaseAttribute("Python", "Beginner", null)]
         public virtual void A_AddASkillToUserProfile(string skill, string level, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
@@ -129,7 +130,7 @@ testRunner.Then(string.Format("The Skill Record Created \'{0}\' and \'{1}\'", sk
             argumentsOfScenario.Add("Skill", skill);
             argumentsOfScenario.Add("Level", level);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("B.Edit a Existing Skill in User Profile", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 12
+#line 14
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -149,13 +150,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 13
+#line 15
 testRunner.Given("User Able Login Into MarsPortal Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 14
+#line 16
 testRunner.When(string.Format("Edit a Existing Skill into User Profile \'{0}\' and \'{1}\' Successfully", skill, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 15
+#line 17
 testRunner.Then(string.Format("The NewSkill record created \'{0}\' and \'{1}\'", skill, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -172,7 +173,7 @@ testRunner.Then(string.Format("The NewSkill record created \'{0}\' and \'{1}\'",
             argumentsOfScenario.Add("Skill", skill);
             argumentsOfScenario.Add("Level", level);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("C.Delete a Existing Skill in User Profile", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+#line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -192,10 +193,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 22
+#line 25
 testRunner.Given("User Logs Into MarsPortal Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 23
+#line 26
 testRunner.When("Delete the added Skill", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }

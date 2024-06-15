@@ -1,4 +1,4 @@
-Feature: LangFeature
+Feature: 1.LangFeature
 
 Scenario: A.Add a Language To User Profile
 Given User Able Login Into MarsPortal Application Successfully
@@ -8,11 +8,9 @@ Then The NewLanguage Record Created '<Language>' and '<Level>' successfully crea
 Examples: 
 | Language | Level                 |
 | Tamil    | Basic                 |
-| Telgu    | Basic                 |
-| en123h   | Basic                 |
-| en123h   | Basic                 |
-|          | Fluent                |
-| spanish@ | Choose Language Level |
+| Malayalm  | Basic				   |	
+|Telgu | Basic |
+| Chinese | Basic |
 
 Scenario: B.Edit a Existing Language in User Profile
 Given User Logs Into MarsPortal
@@ -24,8 +22,6 @@ Examples:
 | English     | Basic          |
 | Telgu       | Basic          |
 | Malayalm    | Basic          |
-|             | Fluent         |
-| Malayalam55 | Language Level |
 
 Scenario: C.Delete a Existing Language in User Profile
 Given User Logs Into MarsPortal successfully
